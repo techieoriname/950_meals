@@ -9,7 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="950" />
-    <orderEntry type="module" module-name="wp" />
-    <orderEntry type="module" module-name="trapcode" />
+    <orderEntry type="module" module-name="TDA" />
   </component>
 </module>
