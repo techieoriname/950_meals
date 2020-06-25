@@ -7,7 +7,7 @@ const env = envLoader(__dirname + '/.env', {
         'MysqlUser',
         'MysqlPassword',
         // if UseMysqlSock===true require `MysqlSocketPath`
-        // (envs) => envs['UseMysqlSock'] === true ?  'MysqlSocketPath' : false
+        (envs) => envs['UseMysqlSock'] === true ?  'MysqlSocketPath' : false
     ]
 })
 
