@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.schema.alterTable("items", function (table) {
-    table.string("slug").notNullable().unique();
+    table.string("slug").unique();
   });
 };
 
