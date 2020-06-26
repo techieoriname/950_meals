@@ -3,9 +3,9 @@ exports.up = function (knex) {
     table.increments("id").primary();
     table.string("country").notNullable();
     table.string("state").notNullable();
-    table.string("city").notNullable().unique();
+    table.string("city").notNullable();
     table.string("zipcode").notNullable();
-    table.string("is_active").nullable().unique();
+    table.string("is_active").nullable();
     table.timestamps(true, true);
   });
 };

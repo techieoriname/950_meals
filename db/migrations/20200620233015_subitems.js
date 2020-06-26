@@ -6,9 +6,9 @@ exports.up = function(knex) {
         table.string("amount").notNullable();
         table.string("sale").nullable();
         table.string("image").nullable();
-        table.boolean("is_popular").nullable().defaultTo(0);
-        table.boolean("is_new").nullable().defaultTo(1);
-        table.boolean("is_active", 15).defaultTo(1);
+        table.boolean("is_popular").nullable();
+        table.boolean("is_new").nullable();
+        table.boolean("is_active", 15);
         table.string("type").nullable();
         table.integer("item_id").unsigned();
         table.timestamps(true, true);

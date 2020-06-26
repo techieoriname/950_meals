@@ -4,11 +4,11 @@ exports.up = function(knex) {
         table.increments("id").primary();
         table.string("name").notNullable();
         table.string("image").nullable();
-        table.boolean("is_popular").nullable().defaultTo(0);
-        table.boolean("is_new").nullable().defaultTo(1);
-        table.boolean("is_active").defaultTo(1);
-        table.boolean("is_meat").notNullable().defaultTo(0);
-        table.boolean("is_drink").notNullable().defaultTo(0);
+        table.boolean("is_popular").nullable();
+        table.boolean("is_new").nullable();
+        table.boolean("is_active");
+        table.boolean("is_meat").notNullable();
+        table.boolean("is_drink").notNullable();
         table.integer("itemcategory_id").unsigned();
         table.timestamps(true, true);
         table.foreign("itemcategory_id").references("id").inTable("itemcategories");
