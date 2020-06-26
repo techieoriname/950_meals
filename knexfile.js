@@ -1,23 +1,27 @@
 const env = require("./env");
+const sqlClient = env['MysqlClient'];
 
-// const connection = {
-//     host: env['MysqlHost'],
-//     user: env['MysqlUser'],
-//     password: env['MysqlPassword'],
-//     database: env['MysqlDatabase'],
-// };
+let connection;
+if (['sqlite', 'sqlite3'].includes(sqlClient)) {
+    connection = {
+        filename: __dirname + env['SqliteFilePath']
+    };
 
-const connection = {
-    filename: __dirname + "/db/database.sqlite"
-};
-
-// if (env['UseMysqlSock']) {
-//     connection.socketPath = env['MysqlSocketPath'];
-// }
+    if (env['UseMysqlSock']) {
+        connection.socketPath = env['MysqlSocketPath'];
+    }
+} else {
+    connection = {
+        host: env['MysqlHost'],
+        user: env['MysqlUser'],
+        password: env['MysqlPassword'],
+        database: env['MysqlDatabase'],
+    };
+}
 
 module.exports = {
     development: {
-        client: "sqlite3",
+        client: sqlClient,
         connection,
         migrations: {
             directory: __dirname + "/db/migrations",
