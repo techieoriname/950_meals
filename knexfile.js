@@ -26,5 +26,6 @@ module.exports = {
             directory: __dirname + "/db/seeds/development",
         },
         // debug: true,
+        useNullAsDefault: true
     },
 };
