@@ -24,6 +24,20 @@ class Subitem extends Model {
             required: ["name", "amount", "image", "item_id"]
         };
     }
+
+    static relationMappings() {
+        const Item = require("./Item")
+        return {
+            item: {
+                relation: Model.BelongsToOneRelation,
+                modelClass: Item,
+                join: {
+                    from: 'subitems.item_id',
+                    to: 'items.id'
+                }
+            },
+        }
+    };
 }
 
 module.exports = Subitem;

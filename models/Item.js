@@ -33,7 +33,7 @@ class Item extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: Itemcategory,
                 join: {
-                    from: 'itemcategory_id',
+                    from: 'items.itemcategory_id',
                     to: 'itemcategories.id'
                 }
             },

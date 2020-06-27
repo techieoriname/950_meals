@@ -19,7 +19,7 @@ exports.seed = function(knex) {
         },
         {
             id: 2,
-            name: 'Indomie',
+            name: 'Yam',
             image: '1592847517121_yam.jpg',
             slug: 'yam',
             is_popular: 1,
